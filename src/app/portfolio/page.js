@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const Portfolio = () => {
     return (
-        <div className='w-3/4 mx-auto h-screen'>
+        <div className='my-8'>
             <div>
                 <h1 className='text-7xl font-bold my-6 text-slate-600'>
                     Our works

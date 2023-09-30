@@ -4,7 +4,7 @@ import Button from '@/components/button/Button'
 
 const Contact = () => {
     return (
-        <div className='w-3/4 mx-auto h-screen'>
+        <div className='my-8'>
             <h1 className='text-4xl font-bold text-center my-4'>Let,s Keep in Touch</h1>
             <div className='flex justify-around items-center'>
                 <div>
@@ -13,6 +13,7 @@ const Contact = () => {
                         width={300}
                         height={300}
                         alt='contact image'
+                        className='animate-pulse'
                     />
                 </div>
                 <div className='space-y-4'>

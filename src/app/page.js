@@ -4,7 +4,7 @@ import Button from '@/components/button/Button'
 
 const Home = () => {
   return (
-    <div className="w-3/4 mx-auto h-screen flex justify-center items-center">
+    <div className="flex justify-center items-center">
       <div className='flex  justify-between items-center'>
         {/* title section */}
         <div className='flex-col space-y-6'>

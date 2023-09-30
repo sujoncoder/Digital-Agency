@@ -7,7 +7,7 @@ import Four from '../../../public/4.png'
 
 const Footer = () => {
     return (
-        <div className='flex justify-between w-3/4 mx-auto mb-4'>
+        <div className='flex justify-between mb-4'>
             <div>© 2023 sujon. All right reserved.</div>
             <div className='flex space-x-4'>
                 <Image
