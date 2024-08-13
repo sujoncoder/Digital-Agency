@@ -1,6 +1,6 @@
 import Footer from "@/components/footer/Footer";
-import Navbar from "@/components/navbar/Navbar";
 import { Inter } from "next/font/google";
+import Navbar from "../components/navBar/Navbar";
 import "./globals.css";
 // import { ThemeProvider } from '../../context/ThemeContext'
 
