@@ -1,58 +1,47 @@
-import Link from 'next/link'
+"use client"
+
+import { links } from '@/utils/links';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import { IoMdMenu } from "react-icons/io";
 // import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
 
 const Navbar = () => {
-    const links = [
-        {
-            id: 1,
-            title: "Home",
-            url: "/"
-        },
-        {
-            id: 2,
-            title: "Portfolio",
-            url: "/portfolio"
-        },
-        {
-            id: 3,
-            title: "Blog",
-            url: "/blog"
-        },
-        {
-            id: 4,
-            title: "About",
-            url: "/about"
-        },
-        {
-            id: 5,
-            title: "Contact",
-            url: "/contact"
-        },
-        {
-            id: 6,
-            title: "Dashboard",
-            url: "/dashboard"
-        }
-    ];
-
+    const [isOpen, setIsOpen] = useState(false);
+    const path = usePathname();
 
     return (
-        <div className='mt-6 flex justify-between'>
-            <div className='text-xl font-bold text-slate-500'>
-                <Link href="/" >iamsujon</Link>
+        <div className='flex flex-col md:flex-row justify-between items-center px-4 md:px-8 py-4 text-slate-700'>
+            <div className='flex justify-between items-center w-full md:w-auto'>
+                <div className='text-xl md:text-2xl font-bold text-slate-500 font-mono'>
+                    <Link href="/" className="text-slate-500">Digital A.</Link>
+                </div>
+
+                {/* Hamburger Menu Icon */}
+                <button 
+                    className='md:hidden flex items-center p-2 text-slate-500'
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    <IoMdMenu className='w-12 h-12' />
+                </button>
             </div>
 
-            <div className='flex space-x-4'>
+            {/* Menu Items */}
+            <div className={`md:flex md:flex-row flex-col ${isOpen ? 'flex' : 'hidden'} mt-4 items-center justify-center md:justify-start`}>
                 {/* <DarkModeToggle /> */}
-                {
-                    links.map((link) => (
-                        <Link key={link.id} href={link.url} >{link.title}</Link>
-                    ))
-                }
-                <button className='py-1 px-4 rounded bg-blue-500 text-white active:bg-blue-600'>Logout</button>
+                {links.map((link) => (
+                    <Link
+                        key={link.id}
+                        href={link.url}
+                        className={`text-lg py-2 px-4 ${path === link.url ? "text-blue-500 font-semibold" : "text-slate-400"}`}
+                    >
+                        {link.title}
+                    </Link>
+                ))}
             </div>
-        </div >
-    )
+        </div>
+    );
 }
 
-export default Navbar
+export default Navbar;

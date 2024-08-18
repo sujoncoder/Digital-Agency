@@ -1,58 +1,67 @@
-import Image from 'next/image'
-import Illustration from '../../../public/illustration.jpg'
-import Website from '../../../public/websites.jpg'
-import Application from '../../../public/apps.jpg'
-import Link from 'next/link'
-
+import Image from 'next/image';
+import Link from 'next/link';
+import Application from '../../../public/apps.jpg';
+import Illustration from '../../../public/illustration.jpg';
+import Website from '../../../public/websites.jpg';
 
 const Portfolio = () => {
     return (
-        <div className='my-8'>
-            <div>
-                <h1 className='text-7xl font-bold my-6 text-slate-600'>
-                    Our works
+        <div className='h-screen'>
+            <div className='text-center'>
+                <h1 className='text-4xl sm:text-6xl font-bold my-6 text-slate-600'>
+                    Our Works
                 </h1>
-
-                <p className='text-2xl font-semibold'>
+                <p className='text-lg sm:text-xl font-semibold my-10'>
                     Choose a gallery
-                </p><br />
+                </p>
             </div>
 
-            <div className='flex space-x-4'>
-                <Link href='/portfolio/illustration' className='relative'>
-                    <Image
-                        src={Illustration}
-                        width={150}
-                        height={150}
-                        alt='website image'
-                        className='object-cover w-48 h-60 border-2 border-pink-500 rounded hover:scale-105 duration-500'
-                    />
-                    <h1 className='text-2xl font-bold absolute bottom-2 right-2 text-pink-500'>Illustration</h1>
+            <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
+                <Link href='/portfolio/illustration' className='relative block'>
+                    <div className='relative w-full h-60'>
+                        <Image
+                            src={Illustration}
+                            layout="fill"
+                            objectFit="cover"
+                            alt='illustration image'
+                            className='border-2 border-pink-500 rounded hover:scale-105 duration-500'
+                        />
+                    </div>
+                    <h1 className='text-lg sm:text-2xl font-bold absolute bottom-2 left-2 text-pink-500'>
+                        Illustration
+                    </h1>
                 </Link>
-                <Link href='/portfolio/website' className='relative'>
-                    <Image
-                        src={Website}
-                        width={150}
-                        height={150}
-                        alt='illustration image'
-                        className='object-cover w-48 h-60 border-2 border-pink-500 rounded hover:scale-105 duration-500'
-                    />
-                    <h1 className='text-2xl font-bold absolute bottom-2 right-2 text-pink-500'>Website</h1>
+                <Link href='/portfolio/website' className='relative block'>
+                    <div className='relative w-full h-60'>
+                        <Image
+                            src={Website}
+                            layout="fill"
+                            objectFit="cover"
+                            alt='website image'
+                            className='border-2 border-pink-500 rounded hover:scale-105 duration-500'
+                        />
+                    </div>
+                    <h1 className='text-lg sm:text-2xl font-bold absolute bottom-2 left-2 text-pink-500'>
+                        Website
+                    </h1>
                 </Link>
-
-                <Link href='/portfolio/application' className='relative'>
-                    <Image
-                        src={Application}
-                        width={150}
-                        height={150}
-                        alt='application image'
-                        className='object-cover w-48 h-60 border-2 border-pink-500 rounded hover:scale-105 duration-500'
-                    />
-                    <h1 className='text-2xl font-bold absolute bottom-2 right-2 text-pink-500'>Application</h1>
+                <Link href='/portfolio/application' className='relative block'>
+                    <div className='relative w-full h-60'>
+                        <Image
+                            src={Application}
+                            layout="fill"
+                            objectFit="cover"
+                            alt='application image'
+                            className='border-2 border-pink-500 rounded hover:scale-105 duration-500'
+                        />
+                    </div>
+                    <h1 className='text-lg sm:text-2xl font-bold absolute bottom-2 left-2 text-pink-500'>
+                        Application
+                    </h1>
                 </Link>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Portfolio
+export default Portfolio;
